@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Editar tarea</h1>
+<form action="{{ url_for('tasks.edit_task', task_id=task[0]) }}" method="POST">
+    <label for="title">Título:</label>
+    <input type="text" name="title" value="{{ task[1] }}" required><br>
+    <label for="description">Descripción:</label>
+    <textarea name="description">{{ task[2] }}</textarea><br>
+    <button type="submit">Actualizar tarea</button>
+</form>
+{% endblock %}
